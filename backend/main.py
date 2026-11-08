@@ -7,10 +7,22 @@ from sqlalchemy.orm import Session, selectinload, joinedload
 from database import get_db
 from models import Series, Episode
 
+from pathlib import Path
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
 app = FastAPI(
     title = "Paperflix API",
     description = "Research discovery through storytelling",
     version="0.1.0"
+)
+
+FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
+
+app.mount(
+    "/static",
+    StaticFiles(directory=FRONTEND_DIR),
+    name="static"
 )
 
 app.add_middleware(
@@ -81,13 +93,9 @@ def episode_details(episode):
 
 #HEALTH CHECK
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 def home():
-
-    return {
-        "message": "Welcome to Papeflix API!",
-        "status": "running"
-    }
+    return FileResponse(FRONTEND_DIR / "index.html")
 
 @app.get("/api/health")
 def health_check(db: Session = Depends(get_db)):
