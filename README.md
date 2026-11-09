@@ -14,11 +14,12 @@
     <strong>Explore the Live Demo</strong>
   </a></p>
 
-    <img width="1308" height="639" alt="paperflix m1" src="https://github.com/user-attachments/assets/8ae52443-a0e0-4130-96ec-8f4234dfc976" />
-    <img width="1292" height="636" alt="image" src="https://github.com/user-attachments/assets/718f5789-0056-4762-b024-490026e11f09" />
-
-
 ---
+
+<img width="1308" height="639" alt="paperflix m1" src="https://github.com/user-attachments/assets/8ae52443-a0e0-4130-96ec-8f4234dfc976" />
+<img width="1292" height="636" alt="image" src="https://github.com/user-attachments/assets/718f5789-0056-4762-b024-490026e11f09" />
+
+
 
 ## The Idea Behind PaperFlix
 
