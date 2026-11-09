@@ -1,0 +1,1918 @@
+
+/* =========================================
+   PAPERFLIX — CINEMATIC DESIGN SYSTEM
+========================================= */
+
+:root {
+    --background: #080808;
+    --surface: #151515;
+    --surface-hover: #222222;
+    --primary: #e50914;
+    --primary-hover: #ff1b26;
+    --text: #ffffff;
+    --muted: #a7a7a7;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--background);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+button, a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 20;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95),
+        transparent
+    );
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.brand-icon {
+    width: 33px;
+    height: 33px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--primary);
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d0d0d0;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: white;
+}
+
+.nav-links a.active {
+    font-weight: 700;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.icon-button,
+.profile-button {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.icon-button {
+    font-size: 30px;
+}
+
+.profile-button {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #ef1927, #5e1020);
+    border-radius: 50%;
+    font-weight: bold;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    height: 650px;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #090d13;
+}
+
+.hero-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 78% 40%,
+            rgba(0, 160, 220, 0.23),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 72% 65%,
+            rgba(180, 0, 20, 0.23),
+            transparent 42%
+        ),
+        linear-gradient(
+            90deg,
+            #080808 5%,
+            rgba(8,8,8,0.96) 29%,
+            rgba(8,8,8,0.35) 75%,
+            rgba(8,8,8,0.65) 100%
+        );
+
+    animation: atmosphere 8s ease-in-out infinite alternate;
+}
+
+/* Abstract cinematic AI artwork */
+
+.hero-backdrop::before {
+    content: "";
+    position: absolute;
+    width: 390px;
+    height: 510px;
+    right: 10%;
+    top: 12%;
+    border-radius: 48% 48% 42% 42%;
+
+    background:
+        radial-gradient(
+            circle at 50% 28%,
+            rgba(255,255,255,0.2),
+            transparent 13%
+        ),
+        radial-gradient(
+            ellipse at 35% 43%,
+            #11a7c0,
+            #153b53 38%,
+            #101820 75%
+        );
+
+    box-shadow:
+        0 0 100px rgba(0, 180, 230, 0.17),
+        inset -30px -20px 60px rgba(0,0,0,0.8);
+
+    transform: rotate(-5deg);
+    opacity: 0.65;
+}
+
+.hero-backdrop::after {
+    content: "";
+    position: absolute;
+    right: 19%;
+    top: 40%;
+    width: 190px;
+    height: 45px;
+
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 20, 30, 0.7),
+        transparent 68%
+    );
+
+    filter: blur(15px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 620px;
+    margin-left: 7%;
+    padding-top: 65px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2e2e2;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.red-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 12px var(--primary);
+}
+
+.hero-category {
+    color: #ff5b63;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.95;
+    font-weight: 950;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-description {
+    color: #d2d2d2;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 490px;
+    margin-bottom: 22px;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #c5c5c5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+.separator {
+    color: var(--primary);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 13px 25px;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: white;
+    color: black;
+}
+
+.btn-primary:hover {
+    background: #dedede;
+    transform: scale(1.04);
+}
+
+.btn-secondary {
+    background: rgba(100,100,100,0.55);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(130,130,130,0.7);
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 42px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+
+.note-line {
+    width: 35px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.hero-bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(
+        transparent,
+        var(--background)
+    );
+    z-index: 2;
+}
+
+@keyframes atmosphere {
+    from { filter: brightness(0.85); }
+    to { filter: brightness(1.15); }
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.content-section {
+    position: relative;
+    z-index: 4;
+    padding: 35px 5%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.section-eyebrow {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 25px;
+    font-weight: 800;
+    margin: 7px 0;
+    letter-spacing: -0.5px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.view-all {
+    font-size: 13px;
+    color: #c9c9c9;
+}
+
+.view-all:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   SERIES CARDS
+========================================= */
+
+.series-row,
+.episode-row {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 8px 3px 22px;
+    scrollbar-width: thin;
+    scrollbar-color: #444 transparent;
+}
+
+.series-card {
+    min-width: 330px;
+    max-width: 330px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.series-card:hover {
+    transform: scale(1.045);
+    z-index: 5;
+}
+
+.poster {
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+
+    background:
+        radial-gradient(
+            circle at 78% 38%,
+            rgba(0, 200, 245, 0.5),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 75% 75%,
+            rgba(220, 0, 35, 0.5),
+            transparent 38%
+        ),
+        linear-gradient(120deg, #06090f, #142c3b, #090909);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.poster::before {
+    content: "";
+    position: absolute;
+    right: 6%;
+    top: 12%;
+    width: 150px;
+    height: 185px;
+    border-radius: 50% 50% 42% 42%;
+    background: linear-gradient(120deg, #193b4f, #07121c);
+    box-shadow: 0 0 40px rgba(0, 165, 225, 0.3);
+    transform: rotate(-8deg);
+}
+
+.poster::after {
+    content: "";
+    position: absolute;
+    right: 22%;
+    top: 38%;
+    width: 35px;
+    height: 7px;
+    background: #ff2638;
+    border-radius: 50%;
+    box-shadow: 0 0 17px #f00;
+}
+
+.poster-label,
+.poster-copy,
+.poster-bottom {
+    position: relative;
+    z-index: 2;
+}
+
+.poster-label {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.poster-copy {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.poster-copy strong {
+    color: var(--primary);
+    font-size: 26px;
+    font-style: italic;
+}
+
+.poster-bottom {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.card-information {
+    padding: 12px 3px;
+}
+
+.card-information h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.card-information p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================================
+   EPISODE CARDS
+========================================= */
+
+.episode-card {
+    min-width: 245px;
+    max-width: 245px;
+    background: var(--surface);
+    border-radius: 7px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: scale(1.05);
+    background: var(--surface-hover);
+}
+
+.episode-art {
+    height: 145px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.episode-truth {
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(0, 180, 220, 0.5),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #07121d, #163347, #070707);
+}
+
+.episode-truth::after {
+    content: "?";
+    position: absolute;
+    right: 24px;
+    top: -25px;
+    font-size: 170px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.09);
+}
+
+.episode-number {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.episode-art-title {
+    position: relative;
+    z-index: 2;
+    font-size: 21px;
+    font-weight: 950;
+    line-height: 1.1;
+    font-style: italic;
+    text-shadow: 0 2px 10px black;
+}
+
+.episode-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #dddddd;
+}
+
+.episode-information {
+    padding: 14px;
+}
+
+.episode-information > span {
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.episode-information h3 {
+    font-size: 15px;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.episode-information p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   JOURNEY SECTION
+========================================= */
+
+.journey-section {
+    margin: 55px 5%;
+    padding: 65px 7%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 85% 30%,
+            rgba(229, 9, 20, 0.2),
+            transparent 45%
+        ),
+        linear-gradient(110deg, #171717, #0e0e0e);
+    border: 1px solid var(--border);
+}
+
+.journey-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.journey-content h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    margin: 16px 0;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.journey-content h2 span {
+    color: var(--primary);
+}
+
+.journey-content p {
+    color: #b8b8b8;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.journey-link {
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+.journey-link:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 45px 5%;
+    background: #050505;
+    border-top: 1px solid var(--border);
+}
+
+.footer-brand {
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 950;
+    margin-bottom: 12px;
+}
+
+.footer p {
+    color: #cccccc;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.footer .footer-small {
+    color: #707070;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero-content {
+        margin-left: 5%;
+        max-width: 550px;
+    }
+
+    .hero-backdrop::before {
+        right: -5%;
+        opacity: 0.35;
+    }
+
+    .series-card {
+        min-width: 280px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 65px;
+        padding: 0 5%;
+    }
+
+    .brand {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-actions {
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 600px;
+        height: 82vh;
+        max-height: 720px;
+    }
+
+    .hero-content {
+        margin: 0 6%;
+        padding-top: 65px;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-meta {
+        gap: 7px;
+        font-size: 9px;
+    }
+
+    .btn {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .content-section {
+        padding: 25px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+    .series-card {
+        min-width: 265px;
+        max-width: 265px;
+    }
+
+    .poster {
+        height: 175px;
+    }
+
+    .episode-card {
+        min-width: 215px;
+        max-width: 215px;
+    }
+
+    .journey-section {
+        margin: 30px 4%;
+        padding: 40px 25px;
+    }
+}
+
+/* =========================================
+   REAL CINEMATIC ARTWORK
+========================================= */
+
+.hero-backdrop {
+    background: #080808;
+}
+
+.hero-art {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 68%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    opacity: 0.95;
+}
+
+.hero-backdrop::before {
+    display: none;
+}
+
+.hero-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+    right: 0;
+    top: 0;
+    filter: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            rgba(8,8,8,0.96) 25%,
+            rgba(8,8,8,0.65) 48%,
+            rgba(8,8,8,0.05) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #080808 0%,
+            transparent 40%
+        );
+}
+
+/* SERIES POSTER IMAGES */
+
+.poster {
+    isolation: isolate;
+}
+
+.poster::before,
+.poster::after {
+    display: none;
+}
+
+.poster-image,
+.episode-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
+
+.poster-shade,
+.episode-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.92),
+        rgba(0,0,0,0.55) 48%,
+        rgba(0,0,0,0.05)
+    );
+}
+
+.poster-label,
+.poster-copy,
+.poster-bottom,
+.episode-number,
+.episode-art-title,
+.episode-duration {
+    z-index: 2;
+}
+
+.series-card:hover .poster-image,
+.episode-card:hover .episode-image {
+    transform: scale(1.09);
+}
+
+/* EPISODE ART */
+
+.episode-art {
+    isolation: isolate;
+}
+
+.episode-truth::after {
+    display: none;
+}
+
+.episode-number {
+    position: absolute;
+}
+
+.episode-duration {
+    position: absolute;
+}
+
+
+#episode-reader[hidden] {
+    display: none;
+}
+
+#episode-reader {
+    background: #08090d;
+    padding: 18px 4vw 70px;
+    color: #fff;
+    overscroll-behavior: contain;
+}
+
+#episode-reader .reader-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+#episode-reader .reader-top {
+    position: sticky;
+    top: -18px;
+    z-index: 50;
+    min-height: 65px;
+    margin: -18px -4vw 22px;
+    padding: 12px 4vw;
+    background: rgba(8, 9, 13, 0.92);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+#episode-reader .reader-brand {
+    font-size: 25px;
+    letter-spacing: -1px;
+    font-weight: 950;
+}
+
+#episode-reader .reader-close {
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    padding: 10px 17px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+#episode-reader .reader-close:hover {
+    background: #e50914;
+}
+
+#episode-reader .reader-episode-hero {
+    position: relative;
+    min-height: 340px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 12px;
+    background:
+        radial-gradient(
+            ellipse at 75% 35%,
+            rgba(0, 130, 190, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(120deg, #131923, #08090d);
+    isolation: isolate;
+}
+
+#episode-reader .reader-hero-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    z-index: -2;
+}
+
+#episode-reader .reader-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.92),
+            rgba(0,0,0,0.55) 60%,
+            rgba(0,0,0,0.15)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,0.95),
+            transparent 85%
+        );
+}
+
+#episode-reader .reader-hero-content {
+    position: relative;
+    max-width: 720px;
+    padding: 35px;
+}
+
+#episode-reader .reader-kicker {
+    display: inline-block;
+    color: #ff454e;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
+}
+
+#episode-reader .reader-episode-hero .reader-title {
+    font-size: clamp(36px, 5vw, 61px);
+    font-weight: 950;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin: 0 0 16px;
+    max-width: 750px;
+}
+
+#episode-reader .reader-hero-content > p {
+    color: #d2d2d2;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 620px;
+}
+
+#episode-reader .reader-episode-meta {
+    color: #aaa;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+/* Later chapters */
+
+#episode-reader .reader-episode-context {
+    margin: 42px auto 28px;
+    max-width: 850px;
+}
+
+#episode-reader .reader-episode-context > span {
+    color: #ff454e;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+#episode-reader .reader-episode-context h1 {
+    font-size: clamp(25px, 4vw, 42px);
+    margin-top: 12px;
+    line-height: 1.2;
+}
+
+
+/* --------------------------------
+   READING AREA
+-------------------------------- */
+
+#episode-reader .reader-main {
+    max-width: 790px;
+    margin: 42px auto 80px;
+}
+
+#episode-reader .reader-progress-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #aaa;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+}
+
+#episode-reader .reader-progress-info span:first-child {
+    color: #ff454e;
+}
+
+#episode-reader .reader-progress {
+    height: 5px;
+    margin: 13px 0 9px;
+    background: #292929;
+    border-radius: 20px;
+}
+
+#episode-reader .reader-progress-fill {
+    background: linear-gradient(
+        90deg,
+        #a80610,
+        #ff2532
+    );
+    border-radius: 20px;
+}
+
+#episode-reader .reader-progress-caption {
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+}
+
+#episode-reader .reader-chapter-header {
+    margin: 45px 0 27px;
+}
+
+#episode-reader .reader-chapter-header .reader-kicker {
+    margin-bottom: 12px;
+}
+
+#episode-reader .reader-chapter-title {
+    font-size: clamp(26px, 3.5vw, 39px);
+    line-height: 1.2;
+    font-weight: 850;
+    letter-spacing: -0.8px;
+    max-width: 750px;
+}
+
+/* Long-form storytelling */
+
+#episode-reader .reader-story {
+    max-width: 760px;
+    font-size: 18px;
+    line-height: 1.95;
+    color: #d5d5d5;
+    margin: 30px 0 42px;
+    white-space: normal;
+}
+
+#episode-reader .reader-story p {
+    margin-bottom: 24px;
+    color: #d5d5d5;
+}
+
+#episode-reader .reader-story p:last-child {
+    margin-bottom: 0;
+}
+
+#episode-reader .reader-story strong {
+    color: #fff;
+}
+
+/* --------------------------------
+   RESEARCH VISUALS
+-------------------------------- */
+
+#episode-reader .research-insert {
+    position: relative;
+    margin: 42px 0;
+    padding: 25px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 39, 54, 0.8),
+            rgba(20, 20, 24, 0.95)
+        );
+    border: 1px solid rgba(100, 170, 210, 0.16);
+    border-radius: 10px;
+}
+
+#episode-reader .research-insert-label {
+    color: #83c8ed;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+#episode-reader .research-stats {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(130px, 1fr)
+    );
+    gap: 12px;
+}
+
+#episode-reader .research-stat {
+    background: rgba(255,255,255,0.055);
+    padding: 19px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+#episode-reader .research-stat span {
+    display: block;
+    color: #aaa;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+}
+
+#episode-reader .research-stat strong {
+    display: block;
+    color: white;
+    font-size: clamp(20px, 3vw, 30px);
+    margin-top: 10px;
+    overflow-wrap: anywhere;
+}
+
+#episode-reader .research-models {
+    margin-top: 25px;
+}
+
+#episode-reader .research-models h4,
+#episode-reader .research-insert h4 {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+#episode-reader .research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+#episode-reader .research-tags span {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.07);
+    color: #dedede;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+#episode-reader .research-findings {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+#episode-reader .research-finding {
+    background: rgba(255,255,255,0.055);
+    padding: 19px;
+    border-radius: 8px;
+    border-left: 3px solid #e50914;
+}
+
+#episode-reader .research-finding strong {
+    color: #ff626b;
+    font-size: 30px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+#episode-reader .research-finding p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #c5c5c5;
+}
+
+
+/* --------------------------------
+   RESEARCH LIMITATIONS
+-------------------------------- */
+
+#episode-reader .research-limitations {
+    background: rgba(65, 35, 35, 0.32);
+    border-color: rgba(229,9,20,0.2);
+}
+
+#episode-reader .research-limitations .research-insert-label {
+    color: #ff777d;
+}
+
+#episode-reader .research-limitations ul,
+#episode-reader .episode-evidence ul {
+    padding-left: 20px;
+    color: #ccc;
+}
+
+#episode-reader .research-limitations li,
+#episode-reader .episode-evidence li {
+    margin: 12px 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#episode-reader .episode-evidence {
+    margin-top: 55px;
+}
+
+#episode-reader .episode-evidence .research-insert h3 {
+    font-size: 23px;
+    margin: 12px 0;
+}
+
+#episode-reader .episode-evidence .research-insert > p {
+    line-height: 1.8;
+    color: #ccc;
+}
+
+#episode-reader .research-source-card {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    background: #151515;
+    border: 1px solid rgba(255,255,255,0.09);
+}
+
+#episode-reader .research-source-card > span {
+    color: #ff545c;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+#episode-reader .research-source-card h3 {
+    color: #fff;
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+#episode-reader .research-source-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #aaa;
+}
+
+#episode-reader .research-source-card a {
+    display: inline-block;
+    margin-top: 22px;
+    color: #ff515b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#episode-reader .research-source-card a:hover {
+    color: #fff;
+}
+
+/* --------------------------------
+   CLIFFHANGER
+-------------------------------- */
+
+#episode-reader .reader-next-investigation {
+    margin: 50px 0 35px;
+    padding: 38px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background:
+        radial-gradient(
+            ellipse at 85% 30%,
+            rgba(229,9,20,0.23),
+            transparent 50%
+        ),
+        linear-gradient(120deg, #191919, #0c1017);
+    border: 1px solid rgba(229,9,20,0.25);
+}
+
+#episode-reader .reader-next-investigation h2 {
+    max-width: 600px;
+    color: white;
+    font-size: clamp(25px, 4vw, 37px);
+    font-weight: 950;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+#episode-reader .reader-next-investigation p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+#episode-reader .reader-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 38px 0;
+}
+
+#episode-reader .reader-actions button {
+    padding: 14px 21px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+#episode-reader .reader-previous {
+    background: #252525;
+    color: white;
+}
+
+#episode-reader .reader-previous:hover:not(:disabled) {
+    background: #3a3a3a;
+}
+
+#episode-reader .reader-previous:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+#episode-reader .reader-next {
+    background: #e50914;
+    color: white;
+}
+
+#episode-reader .reader-next:hover {
+    background: #ff2632;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 650px) {
+
+    #episode-reader {
+        padding: 12px 17px 45px;
+    }
+
+    #episode-reader .reader-top {
+        top: -12px;
+        margin: -12px -17px 17px;
+        padding: 12px 17px;
+    }
+
+    #episode-reader .reader-episode-hero {
+        min-height: 300px;
+    }
+
+    #episode-reader .reader-hero-content {
+        padding: 22px;
+    }
+
+    #episode-reader .reader-main {
+        margin-top: 30px;
+    }
+
+    #episode-reader .reader-story {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    #episode-reader .research-insert,
+    #episode-reader .research-source-card,
+    #episode-reader .reader-next-investigation {
+        padding: 19px;
+    }
+
+    #episode-reader .research-findings {
+        grid-template-columns: 1fr;
+    }
+
+    #episode-reader .reader-actions button {
+        padding: 12px 14px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   UPCOMING SERIES
+========================================= */
+
+.upcoming-card {
+    cursor: default;
+}
+
+.upcoming-poster {
+    isolation: isolate;
+    background-color: #090a10;
+    overflow: hidden;
+}
+
+.upcoming-poster::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.9;
+    transition: transform 0.4s ease;
+    background:
+        repeating-linear-gradient(
+            125deg,
+            transparent 0 22px,
+            rgba(255,255,255,0.035) 23px 24px
+        );
+}
+
+.upcoming-card:hover .upcoming-poster::before {
+    transform: scale(1.08);
+}
+
+/* Different visual identity for each research theme */
+
+.upcoming-poster--blackbox {
+    background:
+        radial-gradient(circle at 72% 35%, #174a72 0%, transparent 38%),
+        linear-gradient(135deg, #05080d, #101b2b 60%, #030407);
+}
+
+.upcoming-poster--reward {
+    background:
+        radial-gradient(circle at 70% 30%, #8b241e 0%, transparent 38%),
+        linear-gradient(135deg, #080505, #30100e 60%, #050303);
+}
+
+.upcoming-poster--fooled {
+    background:
+        radial-gradient(circle at 72% 35%, #57357e 0%, transparent 38%),
+        linear-gradient(135deg, #08060d, #21152f 60%, #040308);
+}
+
+.upcoming-poster--watchers {
+    background:
+        radial-gradient(circle at 70% 35%, #17604c 0%, transparent 38%),
+        linear-gradient(135deg, #030a08, #10271e 60%, #020504);
+}
+
+.upcoming-poster--collude {
+    background:
+        radial-gradient(circle at 70% 35%, #74304d 0%, transparent 38%),
+        linear-gradient(135deg, #09050b, #291020 60%, #040207);
+}
+
+/* Keep text above decorative backgrounds */
+
+.upcoming-poster .poster-label,
+.upcoming-poster .poster-copy,
+.upcoming-poster .poster-bottom,
+.upcoming-poster .upcoming-badge {
+    z-index: 2;
+}
+
+.upcoming-poster .poster-shade {
+    z-index: 1;
+}
+
+.upcoming-badge {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 9px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 3px;
+    background: rgba(0,0,0,0.65);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.upcoming-description {
+    margin-top: 7px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.upcoming-card:hover {
+    cursor: default;
+}
+
+
+/* =========================================
+   PAPERFLIX RESEARCH AREAS
+========================================= */
+
+.research-areas-section {
+    padding-top: 55px;
+}
+
+.research-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.research-area-card {
+    position: relative;
+    min-height: 165px;
+    padding: 23px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 10px;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(180,20,35,0.14),
+            transparent 55%
+        ),
+        #111114;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.research-area-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(239,25,45,0.55);
+    background-color: #171316;
+}
+
+.research-area-index {
+    color: #ed2638;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.research-area-card h3 {
+    margin: 22px 0 8px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.research-area-card p {
+    margin: 0;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .research-areas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .research-areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-area-card {
+        min-height: 135px;
+    }
+}
+
+
+/* =========================================
+   SELECTED SERIES / EPISODE EMPTY STATE
+========================================= */
+
+#episodes[hidden] {
+    display: none !important;
+}
+
+.empty-episodes {
+    padding: 35px 25px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    background: #111114;
+}
+
+.empty-episodes h3 {
+    color: #fff;
+    margin: 0 0 10px;
+}
+
+.empty-episodes p,
+.episode-error {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CINEMATIC UPCOMING SERIES ARTWORK
+========================================= */
+
+.upcoming-poster {
+    position: relative;
+    overflow: hidden;
+    background: #080808;
+    isolation: isolate;
+}
+
+.upcoming-poster-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.upcoming-card:hover .upcoming-poster-image {
+    transform: scale(1.07);
+}
+
+.upcoming-poster .poster-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.05) 35%,
+        rgba(0,0,0,0.88) 100%
+    );
+}
+
+.upcoming-poster .poster-label,
+.upcoming-poster .poster-copy,
+.upcoming-poster .poster-bottom,
+.upcoming-poster .upcoming-badge {
+    z-index: 2;
+}
+
+.upcoming-poster .poster-copy strong {
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.upcoming-poster .poster-bottom {
+    color: #ffffff;
+}
+
+.upcoming-badge {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 9px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 3px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+/* =========================================
+   INTERACTIVE RESEARCH AREA CARDS
+========================================= */
+
+.research-area-card {
+    cursor: pointer;
+    position: relative;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.research-area-card::after {
+    content: "EXPLORE →";
+    position: absolute;
+    right: 20px;
+    bottom: 18px;
+    color: #ed2638;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.research-area-card:hover::after,
+.research-area-card:focus-visible::after {
+    opacity: 1;
+}
+
+.research-area-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(237, 38, 56, 0.7);
+}
+
+.research-area-card.is-active {
+    border-color: #ed2638;
+    background: #201014;
+}
+
+.research-area-card:focus-visible {
+    outline: 2px solid #ed2638;
+    outline-offset: 4px;
+}
+
+/* Selected catalogue series */
+
+.series-card.is-highlighted {
+    outline: 2px solid #ed2638;
+    outline-offset: 5px;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* =========================================
+   CLEAN CINEMATIC SERIES POSTERS
+========================================= */
+
+.catalog-poster,
+.upcoming-poster {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: #101014;
+}
+
+.catalog-poster .poster-image,
+.upcoming-poster-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.45s ease;
+}
+
+.series-card:hover .poster-image,
+.series-card:hover .upcoming-poster-image {
+    transform: scale(1.06);
+}
+
+.catalog-poster-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.25),
+        transparent 45%,
+        rgba(0,0,0,0.55)
+    );
+}
+
+.catalogue-status {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 6px 9px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    background: rgba(0,0,0,0.72);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.available-status {
+    border-color: rgba(255,255,255,0.4);
+}
+
+.card-information h3 {
+    margin-top: 10px;
+}
+
+.upcoming-description {
+    color: #999;
+    font-size: 11px;
+    line-height: 1.5;
+}

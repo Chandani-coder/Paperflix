@@ -53,28 +53,49 @@ def seed_series(db):
     print(f"Processes {len(SERIES)} series.")
 
 
+
 def seed_episodes(db):
+
     for episode_id, episode_data in EPISODES.items():
 
-        if db.get(Episode, episode_id):
-            continue
+        episode = db.get(Episode, episode_id)
 
-        episode= Episode(
-            id=episode_id,
-            paper_id=episode_data["paper_id"],
-            series_id=episode_data["series_id"],
-            episode_number=episode_data["episode_number"],
-            presentation=episode_data["presentation"],
-            story=episode_data["story"],
-            science_card=episode_data["science_card"],
-            next_episode_id=episode_data["navigation"]["next_episode_id"],
-            publication_status=episode_data["publication_status"]
-        )
+        if episode:
+            # Update existing episode
+            episode.paper_id = episode_data["paper_id"]
+            episode.series_id = episode_data["series_id"]
+            episode.episode_number = episode_data["episode_number"]
+            episode.presentation = episode_data["presentation"]
+            episode.story = episode_data["story"]
+            episode.science_card = episode_data["science_card"]
+            episode.next_episode_id = (
+                episode_data["navigation"]["next_episode_id"]
+            )
+            episode.publication_status = (
+                episode_data["publication_status"]
+            )
 
-        db.add(episode)
+        else:
+            # Insert new episode
+            episode = Episode(
+                id=episode_id,
+                paper_id=episode_data["paper_id"],
+                series_id=episode_data["series_id"],
+                episode_number=episode_data["episode_number"],
+                presentation=episode_data["presentation"],
+                story=episode_data["story"],
+                science_card=episode_data["science_card"],
+                next_episode_id=(
+                    episode_data["navigation"]["next_episode_id"]
+                ),
+                publication_status=episode_data["publication_status"]
+            )
+
+            db.add(episode)
 
     db.flush()
     print(f"Processed {len(EPISODES)} episodes.")
+
 
 def seed_database():
     initialize_database()
@@ -86,7 +107,7 @@ def seed_database():
             seed_episodes(db)
 
             db.commit()
-            print("\nPaperrflix database seeded successfully!")
+            print("\nPaperflix database seeded successfully!")
 
         except Exception:
             db.rollback()

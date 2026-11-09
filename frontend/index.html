@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+
+    <title>PaperFlix — Research Without Limits</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-icon">P</span>
+            <span>PaperFlix</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="#series">Series</a>
+            <a href="#continue">Continue Watching</a>
+            <a href="#journey">My Journey</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-button" aria-label="Search">
+                ⌕
+            </button>
+
+            <button class="profile-button" aria-label="Profile">
+                C
+            </button>
+        </div>
+    </header>
+
+
+    <!-- HERO: FEATURED SERIES -->
+
+<main>
+
+    <section class="hero" id="featured">
+
+        <div class="hero-backdrop">
+            <img
+                class="hero-art"
+                src="/static/images/hero-ai.jpg"
+                alt="Futuristic humanoid AI artwork"
+                fetchpriority="high"
+            >
+        </div>
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span class="red-dot"></span>
+                PAPERFLIX ORIGINALS · AI SAFETY RESEARCH
+            </div>
+
+            <p class="hero-category">
+                THE SCIENCE OF AI SAFETY
+            </p>
+
+            <h1>
+                AI THAT <span>LIES?</span>
+            </h1>
+
+            <p class="hero-description">
+                Our first research investigation explores a
+                difficult question: can we trust what AI tells us?
+                Discover the real experiments behind AI truthfulness,
+                deception and the science of building safer systems.
+            </p>
+
+            <div class="hero-meta">
+                <span>REAL RESEARCH</span>
+                <span class="separator">•</span>
+                <span>AI SAFETY</span>
+                <span class="separator">•</span>
+                <span>BEGINNER FRIENDLY</span>
+            </div>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="btn btn-primary"
+                    id="start-series"
+                    data-series-id="ai-that-lies"
+                >
+                    <span>▶</span> Watch Featured Series
+                </button>
+
+                <button class="btn btn-secondary" id="my-list">
+                    ＋ My List
+                </button>
+
+            </div>
+
+            <div class="hero-note">
+                <span class="note-line"></span>
+                REAL PAPERS. CINEMATIC INVESTIGATIONS.
+            </div>
+
+        </div>
+
+        <div class="hero-bottom-gradient"></div>
+
+    </section>
+
+    <section class="content-section" id="continue" hidden>
+
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">YOUR JOURNEY</span>
+                <h2>Continue Watching</h2>
+                <p>Pick up right where you left off.</p>
+            </div>
+        </div>
+
+        <div class="episode-row" id="continue-list">
+            <!-- Reading progress cards loaded through JavaScript -->
+        </div>
+
+    </section>
+
+    <section class="content-section" id="series">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">ENTER THE UNKNOWN</span>
+                <h2>Explore AI Safety Series</h2>
+                <p>
+                    Real research. Uncomfortable questions.
+                    Discoveries that matter.
+                </p>
+            </div>
+
+            <a href="#series" class="view-all">
+                Explore all <span>→</span>
+            </a>
+        </div>
+
+        <div class="series-row" id="series-list">
+
+            <!--
+                Published and upcoming series are loaded
+                dynamically through the FastAPI backend
+                and the frontend catalogue.
+            -->
+
+        </div>
+
+    </section>
+
+
+    <section class="content-section research-areas-section" id="research-areas">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">FOLLOW THE QUESTIONS</span>
+                <h2>Explore Research Areas</h2>
+                <p>
+                    Discover the different challenges researchers
+                    are working to solve.
+                </p>
+            </div>
+        </div>
+
+        <div class="research-areas-grid">
+
+            <article class="research-area-card"
+                data-series-id="ai-that-lies">
+                <span class="research-area-index">01 / TRUTH</span>
+                <h3>Truthfulness & Deception</h3>
+                <p>Can we trust what AI systems tell us?</p>
+            </article>
+
+            <article class="research-area-card"
+                data-series-id="inside-black-box">
+                <span class="research-area-index">02 / INSIDE</span>
+                <h3>Mechanistic Interpretability</h3>
+                <p>What happens inside a neural network?</p>
+            </article>
+
+            <article class="research-area-card"
+                data-series-id="reward-trap">
+                <span class="research-area-index">03 / REWARDS</span>
+                <h3>Reward Hacking</h3>
+                <p>Can AI learn to exploit its objectives?</p>
+            </article>
+
+            <article class="research-area-card"
+                data-series-id="can-ai-be-fooled">
+                <span class="research-area-index">04 / ROBUSTNESS</span>
+                <h3>Adversarial Robustness</h3>
+                <p>How can intelligent systems be fooled?</p>
+            </article>
+
+            <article class="research-area-card"
+                data-series-id="watchers">
+                <span class="research-area-index">05 / OVERSIGHT</span>
+                <h3>Evaluation & Oversight</h3>
+                <p>How do we know an AI system is safe?</p>
+            </article>
+
+            <article class="research-area-card"
+                data-series-id="agents-collude">
+                <span class="research-area-index">06 / AGENTS</span>
+                <h3>Multi-Agent Alignment</h3>
+                <p>What happens when AI agents interact?</p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SELECTED SERIES EPISODES
+         Hidden until a series is selected
+    ====================================== -->
+
+    <section class="content-section" id="episodes" hidden>
+
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">INSIDE THE RESEARCH</span>
+                <h2 id="episode-section-title">Series Episodes</h2>
+                <p id="episode-section-description">
+                    Explore the research investigations in this series.
+                </p>
+            </div>
+        </div>
+
+        <div class="episode-row" id="episode-list">
+
+            <!--
+                Episodes will be populated for the selected series.
+                No permanently displayed episode cards on the homepage.
+            -->
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         THE PAPERFLIX RESEARCH STANDARD
+    ====================================== -->
+
+    <section class="journey-section" id="journey">
+
+        <div class="journey-content">
+
+            <span class="section-eyebrow">
+                THE PAPERFLIX RESEARCH STANDARD
+            </span>
+
+            <h2>
+                More than a story.<br>
+                <span>Grounded in science.</span>
+            </h2>
+
+            <p>
+                Every published episode takes you inside real research.
+                Understand the experiments, examine the findings,
+                question the limitations and explore the original
+                papers behind every investigation.
+            </p>
+
+            <a href="#series" class="journey-link">
+                Explore AI Safety research →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-brand">PaperFlix.</div>
+
+        <p>
+            Research deserves better storytelling.
+        </p>
+
+        <p class="footer-small">
+            Real research. Original sources. New ways to explore.
+        </p>
+
+    </footer>
+
+</body>
+</html>
