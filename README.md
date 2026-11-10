@@ -1,12 +1,12 @@
-# PAPERFLIX 🎬
-### Where AI Safety Research Becomes an Experience.
+# PAPERFLIX 
+### What if reading research papers felt like watching Netflix?
 
 <p align="center">
-  <strong>Real Research. Uncomfortable Questions. Discoveries That Matter.</strong>
+  <strong>Real Research. Interesting Stories. Questions Worth Exploring.</strong>
 </p>
 
 <p align="center">
-  A cinematic research discovery platform exploring the science of AI Safety through immersive, story-driven episodes.
+  A different way to discover and understand research, starting with AI Safety.
 </p>
 
 <p align="center">
@@ -21,29 +21,32 @@
 
 
 
-## The Idea Behind PaperFlix
+## So, what's Paperflix?
 
-What if discovering research felt more like watching a compelling documentary series than opening a dense academic paper?
+We've all been there.
 
-Research is one of the most important ways humanity understands the world. Yet, for many people, getting into research is difficult. Academic papers can be intimidating, technical concepts take time to understand, and important discoveries often remain confined to academic circles.
+You find an interesting research paper, open it, look at the abstract, scroll through a few pages of mathematical notation, and somehow end up closing the tab.
 
-I started thinking about a different approach.
+Not because the research isn't interesting, but because getting into it can be difficult.
 
-What if we borrowed the experience of streaming platforms like Netflix, not to stream entertainment, but to help people discover and understand real scientific research?
+I started wondering:
 
-That thought became **PaperFlix**.
+## What if discovering research felt more like watching a Netflix series?
 
-The idea is simple: take real research papers, uncover the questions behind them, and turn their investigations into engaging episodes that people actually want to explore.
+Like what if we borrowed the experience of streaming platforms like Netflix, not to stream entertainment, but to help people discover and understand real scientific research?
 
-Not another paper summarizer. Not a collection of research links.
+And, That's how **PaperFlix** started.
 
-A different way to experience research.
+The idea is simple: It takes real research papers and turns them into story-driven episodes. So, instead of throwing a 20-page paper at you, it walks you through the problem, the experiments, the findings, and the questions researchers are trying to answer.
 
-## Why AI Safety?
+The idea isn't to replace research papers, it's to make people curious enough to actually read them.
+
+
+## Why start with AI Safety?
 
 I chose AI Safety as the starting point because some of the most important questions about our technological future are still being investigated.
 
-Can we trust what AI tells us?
+like Can we trust what an AI tells us?
 
 Can we understand what happens inside neural networks?
 
@@ -51,33 +54,33 @@ What happens when AI systems learn to manipulate their reward functions?
 
 Can we reliably evaluate increasingly capable AI systems?
 
-These are not just science-fiction questions. They are subjects of active research.
+And, These are not just science-fiction questions. They are subjects of active research.
 
-PaperFlix begins by exploring these questions through a cinematic, psychological-thriller-inspired visual identity.
+So, I wanted the first Paperflix collection to explore these questions with a little bit of psychological thriller vibe.
 
-The intention is to make the experience suspenseful without making the science fictional.
+One rule, though:
 
-**The storytelling can be dramatic. The evidence cannot be exaggerated.**
+**The storytelling can be dramatic. The evidence cannot be exaggerated means the science has to stay honest.**
+
+Every episode is grounded in actual research. No made-up findings, exaggerated conclusions or pretending that a study proves more than it does.
 
 ---
 
-## How PaperFlix Works
+## How does it Work?
 
-PaperFlix organizes research into three levels:
+So, overall PaperFlix has 3 levels:
 
-**1. Research Series**
+**1. Series**
 
-A series explores a broader research question or area within AI Safety.
+Pick a research area or a bigger question that interests you.
 
 **2. Episodes**
 
-Each episode investigates a real research paper, taking the viewer through the problem, methodology, experiments, findings and limitations.
+Each episode takes you through an actual research paper, breaking down what researchers investigated and what they discovered.
 
 **3. Original Research**
 
-Every published episode provides access to its original paper, researchers and source material.
-
-The original paper is further reading, not a substitute for the explanation. The episode should make the central research understandable on its own.
+Btw, if you want to go deeper...You can access the original paper, authors and publication source.
 
 ### The Episode Experience
 
@@ -85,18 +88,19 @@ Each investigation follows a storytelling structure:
 
 | Stage | What happens |
 |---|---|
-| The Hook | Introduce a question that creates curiosity. |
+| The Hook | A question that gets you interested. |
 | The Context | Understand the problem researchers wanted to investigate. |
 | The Investigation | Explore the methodology, experiments and models. |
-| The Findings | Examine what the researchers actually discovered. |
+| The Findings | What did the researchers actually discover? |
 | The Aftermath | Understand limitations and what the study does not establish. |
 | The Next Question | End with a genuine question that leads toward further research. |
 
-PaperFlix aims to make complex research approachable without removing the scientific depth that makes it valuable.
+
+My goal was simple : make research easier to understand but without stripping away the actual science.
 
 ---
 
-## First Original Series: AI That Lies?
+## First Series: AI That Lies?
 
 **Can you trust an AI's answers?**
 
@@ -113,15 +117,15 @@ Published at ACL 2022.
 Original research:
 https://aclanthology.org/2022.acl-long.229/
 
-The episode explores how language models can reproduce common human misconceptions, how researchers designed a benchmark to investigate this behaviour, and what their results actually tell us.
+The research investigates how language models can reproduce common human misconceptions and how their truthfulness can be evaluated.
 
-It also distinguishes between producing a false answer and intentionally deceiving someone. Scientific interpretation matters.
+One interesting distinction the episode explores: giving a false answer and deliberately deceiving someone aren't necessarily the same thing.
 
-This is the type of experience PaperFlix aims to create for every future investigation.
+And, that's the exactly kind of nuance I want Paperflix to preserve.
 
 ---
 
-## What's Inside the Catalogue?
+## What's currently in the Catalogue?
 
 The initial catalogue is focused on AI Safety.
 
@@ -134,7 +138,7 @@ The initial catalogue is focused on AI Safety.
 | Who Watches the Watchers? | Evaluation and oversight | Coming Soon |
 | When Agents Collude | Multi-agent alignment | Coming Soon |
 
-Upcoming series are planned concepts, not published research episodes.
+Upcoming titles are planned concepts, not published research episodes yet.
 
 ---
 
@@ -150,7 +154,7 @@ PaperFlix is designed around a few principles:
 - **Transparent sources:** Original researchers and papers should always receive credit.
 - **Honest limitations:** A study should never be presented as proving more than it actually establishes.
 
-The goal is not to simplify research until it loses its meaning. It is to make meaningful research easier to enter.
+So, overall my goal is not to simplify research until it loses its meaning. But, It's to make meaningful research easier to enter.
 
 ---
 
@@ -158,7 +162,7 @@ The goal is not to simplify research until it loses its meaning. It is to make m
 
 The current MVP includes:
 
-- Cinematic, dark-themed homepage.
+- A cinematic, dark-themed homepage.
 - Featured AI Safety research series.
 - Research series catalogue with upcoming entries.
 - Interactive research-area navigation.
@@ -169,9 +173,12 @@ The current MVP includes:
 - Continue Watching.
 - My List.
 
+Actually, It's still in progress but the core experience is there.
 ---
 
-## Technology Stack
+## Built with
+
+Nothing too complicated for the first version. I wanted to get the idea working before overengineering it.
 
 | Layer | Technology |
 |---|---|
@@ -181,7 +188,7 @@ The current MVP includes:
 | ORM | SQLAlchemy |
 | API | REST |
 | Development | GitHub Codespaces |
-| Deployment | Vercel (MVP deployment) |
+| Deployment | Vercel |
 
 ### Project Structure
 
@@ -215,11 +222,13 @@ PaperFlix/
 
 ---
 
-## Run Locally
+## Want to run it locally?
+
+Really, would love for you to try it out!
 
 ### Prerequisites
 
-- Python 3.12 or newer
+- Python 3.12+
 - Git
 
 ### 1. Clone the repository
@@ -266,17 +275,17 @@ python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 Open:
 
-- Application: http://localhost:8000
-- API documentation: http://localhost:8000/docs
+- App: http://localhost:8000
+- API docs: http://localhost:8000/docs
 - Health check: http://localhost:8000/api/health
 
 ---
 
-## Roadmap
+## What's next?
 
-PaperFlix is an evolving project. The current MVP is the beginning, not the finished destination.
+PaperFlix is an evolving project. Here's what I'd love to build next.
 
-### Phase 1 — The Foundation
+### Phase 1 — The Foundation ✅
 - [x] Establish the PaperFlix concept and visual identity.
 - [x] Build the cinematic homepage.
 - [x] Create the FastAPI backend.
@@ -284,14 +293,14 @@ PaperFlix is an evolving project. The current MVP is the beginning, not the fini
 - [x] Build the immersive research reader.
 - [x] Implement basic reading progress and My List.
 
-### Phase 2 — Research Discovery
+### Phase 2 — Better Research Discovery
 - [ ] Expand the verified AI Safety research catalogue.
-- [ ] Develop advanced search and filtering.
-- [ ] Make research-area navigation more comprehensive.
-- [ ] Add author and publication information.
-- [ ] Improve research recommendations.
+- [ ] Add advanced search and filtering.
+- [ ] Improve research-area navigation.
+- [ ] Add detailed author and publication information.
+- [ ] Build better research recommendations.
 
-### Phase 3 — Personalised Experience
+### Phase 3 — Make It Personal
 - [ ] User accounts and authentication.
 - [ ] Persistent cross-device reading progress.
 - [ ] Personalised research recommendations.
@@ -305,17 +314,19 @@ PaperFlix is an evolving project. The current MVP is the beginning, not the fini
 
 ---
 
-## The Bigger Vision
+## The Bigger Idea
 
 I don't want PaperFlix to become just another website that summarizes academic papers.
 
-I want it to become a place where curiosity leads people into research.
+I'd love to build something that makes people genuinely curious about research haha
 
-Someone might arrive because an episode title catches their attention. They might stay because the story makes them curious. But ideally, they leave understanding an experiment, questioning a result, discovering a researcher, or reading a paper they would never have opened otherwise.
+Like, Imagine someone opening Paperflix because an episode title caught their attention,and getting hooked on the story then discovering an interesting experiment.. and eventually finding themselves reading the original paper.
 
-The long-term ambition is to make high-quality research more approachable without compromising its integrity.
+That's the experience I'm trying to create, let's see what happened..
 
-**Because important discoveries shouldn't be difficult to discover.**
+I think the research shouldn't feel inaccessible just because it's written in academic language.
+
+And maybe the next person who makes an important discovery just needs a better way to discover the research that came before them.
 
 ---
 
@@ -323,3 +334,4 @@ The long-term ambition is to make high-quality research more approachable withou
   <strong>PAPERFLIX</strong><br>
   Real Research. Told Differently.
 </p>
+Just build with curiosity.
