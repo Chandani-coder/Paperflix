@@ -79,6 +79,177 @@ PAPERS = {
                 "of real-world AI reliability."
             ]
         }
+    },
+
+    "toy-models-superposition-2022":{
+        "title": "Toy Models of Superposition",
+
+        "authors": [
+            "Nelson Elhage",
+            "Tristan Hume",
+            "Catherine Olsson",
+            "Nicholas Schiefer",
+            "Tom Henighan",
+            "Shauna Kravec",
+            "Zac Hatfield-Dodds",
+            "Robert Lasenby",
+            "Dawn Drain",
+            "Carol Chen",
+            "Roger Grosse",
+            "Sam McCandlish",
+            "Jared Kaplan",
+            "Dario Amodei",
+            "Martin Wattenberg",
+            "Christopher Olah"
+        ],
+
+        "year": 2022,
+        "venue": "Transform Circuits Thread",
+
+        "source": {
+            "url" : "https://transformer-circuits.pub/2022/toy_model/index.html",
+            "arxiv": "https://arxiv.org/abs/2209.10652"
+        },
+
+        "research": {
+            "question":(
+                "How can neural networks represent more features "
+                "than they have dimensions, and what trade-offs "
+                "does this create?"
+            ),
+
+            "problem": (
+                "Individual neurons do not always correspond to "
+                "one clean, understandable concept. Some appear "
+                "to respond to multiple seemingly unrelated features. "
+                "This makes understanding internal representations "
+                "more difficult."
+            ),
+
+            "experiment": {
+                "model_families": [
+                    "Small ReLU networks",
+                    "Networks trained on synthetic sparse features"
+                ]
+            },
+
+            "findings": [
+                {
+                    "id": "superposition",
+
+                    "result": "More features than dimensions",
+
+                    "meaning": (
+                        "The ReLU toy models can represent more "
+                        "features than available hidden dimensions "
+                        "when the features are sufficiently sparse. "
+                        "They achieve this by representing features "
+                        "in overlapping, non-orthogonal directions."
+                    ),
+
+                    "source_location": (
+                         "Abstract and Demonstrating Superposition"
+                    )
+                },
+
+                {
+                    "id":  "sparsity",
+                    "result": "Sparsity makes compression useful",
+                    "meaning": (
+                        "When features are sparse, they are less "
+                        "likely to activate together. This can make "
+                        "the benefit of representing extra features "
+                        "worth the interference introduced by "
+                        "overlapping representations."
+                    ),
+
+                    "source_location": (
+                        "Background and Mathematical Understanding"
+                    )
+
+                },
+
+                {
+                    "id": "interference",
+                    "result": "Superposition has a cost",
+                    "meaning": (
+                        "Features represented in non-orthogonal "
+                        "directions can interfere with one abother. "
+                        "The ReLU nonlinearity and bias can help "
+                        "filter some small amounts of interference, "
+                        "but the representations are not perfectly "
+                        "independent."
+                    ),
+
+                    "source_location":(
+                        "The Superposition Hypothesis and "
+                        "Mathematical Understanding"
+                    )
+                },
+
+                {
+                    "id": "phase-change",
+                    "result": "Different representation regimes",
+                    "meaning": (
+                        "A feature may remain unlearned, receive "
+                        "a dedicated dimension, or be represented. "
+                        "in superposition, The researchers observed "
+                        "sharp transitions between these strategies "
+                        "as sparsity and relative feature importance "
+                        "changed."
+                    ),
+                    
+                    "source_location": (
+                        "Superposition as a Phase Change"
+                    )
+                },
+                
+                {
+                    "id": "geometry",
+
+                    "result": "Structured geometric arrangements",
+
+                    "meaning": (
+                        "In uniform superposition experiments, "
+                        "feature directions organized into geometric "
+                        "structures such as antipodal pairs, triangles, "
+                        "pentagons and tetrahedra."
+                    ),
+                    "source_location": (
+                        "The Geometry of Superposition"
+                    )
+
+                }
+            ],
+
+            "limitations": [
+                (
+                    "The experiments use small ReLU networks "
+                    "and synthetic data, rather than a deployed "
+                    "large language model."
+                ),
+                (
+                "The authors explicitly state that it was unclear "
+                "how much of the observed behaviour generalizes "
+                "to real neural networks." 
+                ),
+                (
+                "The geometric structures may be partly "
+                "specific to the simplified toy models."
+                ),
+
+                (
+                    "The paper notes that the theory of non-uniform "
+                    "superposition is still incomplete."
+                ),
+
+                (
+                    "The experiments do not provide a complete "
+                    "explanation of the internal representations "
+                    "or decisions of a production language model."
+                )
+            ]
+            }
     }
 }
 
@@ -467,7 +638,7 @@ EPISODES = {
         },
     "publication_status": "draft"
 
-    }
+    },
 }
 
 SERIES = {
@@ -493,6 +664,32 @@ SERIES = {
         ],
 
         "status": "in_development"
+    },
+
+    "inside-black-box": {
+        "id": "inside-black-box",
+        "title": "Inside the Black Box",
+
+        "description": (
+            "An investigation into the hidden representations "
+            "inside neural networks, polysemanticity, "
+            "superposition and mechanistic interpretability."
+        ),
+
+        "genre": "Scientific Thriller",
+        "topic": "Mechanistic Interpretability",
+
+        "cover": {
+            "headline": "WHAT IS HAPPENING INSIDE AI?",
+            "visual": "A neural network hiding a world of representations"
+        },
+
+        "episode_ids": [
+            "inside-black-box-ep01"
+        ],
+
+        "status": "published"
+
     }
 }
 
