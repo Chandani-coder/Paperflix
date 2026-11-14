@@ -1142,7 +1142,9 @@ EPISODES = {
         },
 
         "publication_status": "published"
-},
+        
+    },
+}
 
 SERIES = {
     "ai-that-lies": {

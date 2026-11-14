@@ -8,11 +8,14 @@ const API = "/api";
 const FEATURED_SERIES_ID = "ai-that-lies";
 
 const SERIES_ARTWORK = {
-    "ai-that-lies": "/static/images/series-ai-lies.jpg"
+    "ai-that-lies": "/static/images/series-ai-lies.jpg",
+
+    "inside-black-box": "/static/images/inside-blackbox.png"
 };
 
 const EPISODE_ARTWORK = {
-    "truthfulqa-ep01": "/static/images/episode-truthfulqa.jpg"
+    "truthfulqa-ep01": "/static/images/episode-truthfulqa.jpg",
+    "inside-black-box-ep01": "/static/images/inside-blackbox.png"
 };
 
 
@@ -94,15 +97,6 @@ async function loadSeries() {
     // Planned catalogue entries. These are display-only until real
     // series and episodes are added to the backend.
     const upcomingSeries = [
-        {
-            id: "inside-black-box",
-            title: "Inside the Black Box",
-            topic: "MECHANISTIC INTERPRETABILITY",
-            genre: "AI Safety",
-            subtitle: "What is really happening inside an AI model?",
-            image: "/static/images/inside-blackbox.png",
-            artworkClass: "blackbox"
-        },
         {
             id: "reward-trap",
             title: "The Reward Trap",
@@ -800,7 +794,24 @@ function renderResearchInsert(type, paper) {
             experiment.model_families ||
             [];
 
-        if (!stats.length && !models.length) return "";
+        const dataDescription =
+            experiment.data_description || "";
+
+        const experimentSetup =
+            experiment.setup || "";
+
+        const illustrativeConfiguration =
+            experiment.illustrative_configuration || "";
+
+        if (
+            !stats.length &&
+            !models.length &&
+            !dataDescription &&
+            !experimentSetup &&
+            !illustrativeConfiguration
+        ) {
+            return "";
+        }
 
         return `
             <section class="research-insert">
@@ -831,6 +842,28 @@ function renderResearchInsert(type, paper) {
                         </div>
                     </div>
                 ` : ""}
+
+                ${dataDescription ? `
+                    <div class="research-models">
+                        <h4>THE DATA</h4>
+                        <p>${escapeHTML(dataDescription)}</p>
+                    </div>
+                ` : ""}
+
+                ${experimentSetup ? `
+                    <div class="research-models">
+                        <h4>HOW THE EXPERIMENT WORKED</h4>
+                        <p>${escapeHTML(experimentSetup)}</p>
+                    </div>
+                ` : ""}
+
+                ${illustrativeConfiguration ? `
+                    <div class="research-models">
+                        <h4>THE KEY EXAMPLE</h4>
+                        <p>${escapeHTML(illustrativeConfiguration)}</p>
+                    </div>
+                ` : ""}
+
 
             </section>
         `;
@@ -986,6 +1019,8 @@ async function openEpisode(episodeId) {
 
         const story = episode.story;
         const paper = episode.paper;
+
+        const seriesTitle = episode.series?.title || "PaperFlix";
 
         const sections = [
             {
@@ -1164,7 +1199,10 @@ async function openEpisode(episodeId) {
                 `
                 : `
                     <div class="reader-episode-context">
-                        <span>AI THAT LIES? · EPISODE ${episode.episode_number}</span>
+                        <span>
+                            ${escapeHTML(seriesTitle.toUpperCase())}
+                            · EPISODE ${episode.episode_number}
+                        </span>
 
                         <h1>
                             ${escapeHTML(

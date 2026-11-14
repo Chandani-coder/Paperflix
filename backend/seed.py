@@ -13,20 +13,18 @@ def initialize_database():
 def seed_papers(db):
     for paper_id, paper_data in PAPERS.items():
 
-        if db.get(Paper, paper_id):
-            continue
+        paper = db.get(Paper, paper_id)
 
-        paper = Paper(
-            id=paper_id,
-            title=paper_data["title"],
-            authors=paper_data["authors"],
-            year=paper_data["year"],
-            venue=paper_data["venue"],
-            source=paper_data["source"],
-            research=paper_data["research"]
-        )
+        if paper is None:
+            paper = Paper(id=paper_id)
+            db.add(paper)
 
-        db.add(paper)
+        paper.title = paper_data["title"]
+        paper.authors = paper_data["authors"]
+        paper.year = paper_data["year"]
+        paper.venue = paper_data["venue"]
+        paper.source = paper_data["source"]
+        paper.research = paper_data["research"]
 
     db.flush()
     print(f"Processed {len(PAPERS)} research papers.")
@@ -34,20 +32,18 @@ def seed_papers(db):
 def seed_series(db):
     for series_id, series_data in SERIES.items():
 
-        if db.get(Series, series_id):
-            continue
+        series = db.get(Series, series_id)
 
-        series= Series(
-            id=series_id,
-            title=series_data["title"],
-            description=series_data["description"],
-            genre=series_data["genre"],
-            topic=series_data["topic"],
-            cover=series_data["cover"],
-            status=series_data["status"]
-        )
+        if series is None:
+            series = Series(id=series_id)
+            db.add(series)
 
-        db.add(series)
+        series.title = series_data["title"]
+        series.description = series_data["description"]
+        series.genre = series_data["genre"]
+        series.topic = series_data["topic"]
+        series.cover = series_data["cover"]
+        series.status = series_data["status"]
 
     db.flush()
     print(f"Processes {len(SERIES)} series.")
