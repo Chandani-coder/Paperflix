@@ -594,7 +594,6 @@ EPISODES = {
 
                     "evidence": ["limitations", "research_conclusion"]
                 }
-
             ],
 
             # ======================================
@@ -639,6 +638,267 @@ EPISODES = {
     "publication_status": "draft"
 
     },
+
+    "inside-black-box-ep01":{
+
+        "id": "inside-black-box-ep01",
+
+        "paper_id": "toy-models-superposition-2022",
+
+        "series_id": "inside-black-box",
+
+        "episode_number": 1,
+
+        "presentation": {
+
+            "title": "The Neuron That Means Too Many Things",
+
+            "tagline": (
+                "One tiny network. More features than dimensions. "
+                "A hidden cost."
+            ),
+
+            "genre": "Scientific Thriller",
+
+            "difficulty": "Beginner",
+
+            "estimated_minutes": 9,
+
+            "thumbnail": {
+                "headline": "ONE NEURON. TOO MANY CONCEPTS?",
+                "visual": (
+                    "A mysterious neural network with overlapping "
+                    "representations hidden inside its layers"
+                )
+            }
+        },
+
+        "story": {
+
+            "cold_open": (
+
+                "Imagine a tiny room with only two spaces available.\n\n"
+
+                "Now imagine five different things trying to fit "
+                "inside that room. Five signals. Five pieces of "
+                "information. But only two dimensions to store them.\n\n"
+
+                "The obvious solution seems simple: choose the "
+                "two most important things and forget the rest.\n\n"
+
+                "But what if a neural network found another way?\n\n"
+
+                "What if it could squeeze more information into "
+                "less space by allowing different features to "
+                "share overlapping directions?\n\n"
+
+                "That sounds clever. Almost impossible.\n\n"
+
+                "And it raises a strange question: what if the "
+                "neurons we are trying to understand are not "
+                "representing just one clean concept?\n\n"
+
+                "In 2022, a group of researchers built a tiny "
+                "experimental world to investigate exactly this "
+                "possibility. What they found was a phenomenon "
+                "they called superposition."
+            ),
+            #CHAPTER 1 
+
+            "chapters":[
+                {
+                    "title": (
+                        "The Neuron Problem: "
+                        "Why One Neuron Isn't Always One Feature"
+                    ),
+
+                    "narration": (
+                        "Let's begin with a simple assumption.\n\n"
+
+                        "Suppose we open a neural network and find "
+                        "a neuron that responds whenever a certain "
+                        "visual pattern appears. We might describe "
+                        "it as a feature detector.\n\n"
+
+                        "A feature is simply a property or pattern "
+                        "in the input that the network can represent. "
+                        "It could be something visual, a word-related "
+                        "pattern, or a much more abstract property.\n\n"
+
+                        "This is the picture we would love to have: "
+                        "one neuron, one understandable feature. "
+                        "Researchers often call this kind of clean "
+                        "alignment monosemantic behaviour.\n\n"
+
+                        "But neural networks do not always behave "
+                        "so neatly.\n\n"
+
+                        "Some neurons appear to respond to several "
+                        "different features. A single activation "
+                        "might be associated with patterns that "
+                        "do not seem closely related to us.\n\n"
+
+                        "This is often described as polysemanticity.\n\n"
+
+                        "The problem is obvious. If one neuron "
+                        "responds to several features, simply "
+                        "looking at that neuron's activation may "
+                        "not tell us exactly what information "
+                        "the network is representing.\n\n"
+
+                        "The researchers explored a possible "
+                        "explanation: perhaps the network is "
+                        "trying to represent more features than "
+                        "it has dimensions available.\n\n"
+
+                        "But how could that even work?"
+                    ),
+
+                    "evidence": [
+                        "feature-representations",
+                        "polysemanticity"
+                    ]
+                },
+
+                #CHAPTER 2 
+
+                {
+                    "title": (
+                        "The Experiment: "
+                        "A Tiny Lab With Five Features and Two Dimensions"
+                    ),
+
+                    "narration": (
+                        "Instead of beginning with a giant language "
+                        "model, the researchers built something "
+                        "much smaller and easier to study.\n\n"
+
+                        "Think of an artificial world containing "
+                        "five input features. The network has only "
+                        "two hidden dimensions available to represent "
+                        "them.\n\n"
+
+                        "The researchers created synthetic data "
+                        "for these features. Each feature could "
+                        "sometimes be zero and otherwise take "
+                        "a value between zero and one.\n\n"
+
+                        "The probability of a feature being zero "
+                        "controlled its sparsity. A feature that "
+                        "appeared only occasionally was considered "
+                        "more sparse.\n\n"
+
+                        "The network had a simple job. First, "
+                        "compress the high-dimensional input into "
+                        "a smaller hidden representation. Then "
+                        "attempt to reconstruct the original input.\n\n"
+
+                        "The researchers compared two approaches.\n\n"
+
+                        "The first was a linear model. The second "
+                        "used a ReLU output activation.\n\n"
+
+                        "Why was that small difference important?\n\n"
+
+                        "Because adding that nonlinearity changed "
+                        "what the model could learn. The linear "
+                        "baseline generally selected the most "
+                        "important features it could fit in its "
+                        "available dimensions.\n\n"
+
+                        "The ReLU model opened the door to something "
+                        "more surprising.\n\n"
+
+                        "The experiment was not a test of a real "
+                        "commercial language model. It was a "
+                        "controlled environment designed to "
+                        "understand one possible mechanism "
+                        "behind neural representations."
+                    ),
+
+                    "evidence": [
+                        "synthetic-data",
+                        "relu-experiment"
+                    ]
+                },
+
+                #CHAPTER 3 
+
+                {
+                   "title": (
+                        "The Results: "
+                        "Five Features. Two Dimensions."
+                    ),
+
+                    "narration": (
+
+                        "Now comes the surprising part.\n\n"
+
+                        "In an ordinary linear model, representing "
+                        "more features than available dimensions "
+                        "creates a difficult trade-off. The model "
+                        "usually keeps the most important features "
+                        "and leaves the others out.\n\n"
+
+                        "But the ReLU output model behaved "
+                        "differently when the input features "
+                        "became sparse.\n\n"
+
+                        "Instead of giving every feature its own "
+                        "separate dimension, the network could "
+                        "represent several features using directions "
+                        "that were not perfectly orthogonal.\n\n"
+
+                        "Imagine drawing several arrows inside "
+                        "the same two-dimensional space. If every "
+                        "arrow had to be at a right angle to every "
+                        "other arrow, we could fit only two "
+                        "independent directions.\n\n"
+
+                        "But the network did not require perfect "
+                        "right angles. It could use directions "
+                        "that were close to orthogonal while "
+                        "sharing the same limited space.\n\n"
+
+                        "This is the central idea of superposition: "
+                        "representing more features than there "
+                        "are dimensions available.\n\n"
+
+                        "The researchers demonstrated this in "
+                        "their toy models. They also studied larger "
+                        "configurations, including 80 input features "
+                        "represented using 20 hidden dimensions.\n\n"
+
+                        "But there was a catch.\n\n"
+
+                        "The extra information did not come for "
+                        "free. Sharing the same representational "
+                        "space created interference."
+                    ),
+
+                    "evidence": [
+                        "superposition",
+                        "sparsity"
+                    ]
+                },
+
+                #CHAPTER 4 
+
+                {
+                    "title": (
+                        "The Hidden Cost: "
+                        "Interference Is the Price"
+                    ),
+
+                    "evidence": [
+                        "interference"
+                    ]
+                },
+
+                #CHAPTER 5
+            ]
+        }
+    }
 }
 
 SERIES = {
