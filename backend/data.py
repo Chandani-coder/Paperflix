@@ -896,10 +896,253 @@ EPISODES = {
                 },
 
                 #CHAPTER 5
+
+                {
+                   "title": (
+                        "The Turning Point: "
+                        "A Phase Change in Representation" 
+                    ),
+
+                    "narration": (
+
+                        "The researchers discovered that "
+                        "superposition was not simply an "
+                        "all-or-nothing decision.\n\n"
+
+                        "Depending on the conditions, a feature "
+                        "could fall into one of three broad "
+                        "situations.\n\n"
+
+                        "First, the network might not learn "
+                        "the feature at all.\n\n"
+
+                        "Second, it might represent the feature "
+                        "in superposition, sharing representational "
+                        "space with other features.\n\n"
+
+                        "Or third, it might give that feature "
+                        "a dedicated dimension.\n\n"
+
+                        "To investigate these transitions, "
+                        "the researchers changed two important "
+                        "variables: how sparse the features were "
+                        "and how important one feature was "
+                        "relative to another.\n\n"
+
+                        "They observed sharp transitions between "
+                        "different representation strategies.\n\n"   
+
+                        "The paper calls this a phase change.\n\n"
+
+                        "There is an important detail here. "
+                        "The authors use that term in a generalized "
+                        "sense, meaning a discontinuous change "
+                        "between regimes. They are not claiming "
+                        "that a neural network literally undergoes "
+                        "a physical phase transition like water "
+                        "turning into ice.\n\n"
+
+                        "It means that a gradual change in "
+                        "experimental conditions can sometimes "
+                        "lead to a sudden change in the network's "
+                        "preferred representation."
+                        
+                        ),
+
+                        "evidence": [
+                        "phase-change"
+                    ]       
+                },
+
+                #CHAPTER 6 
+
+                {
+                   "title": (
+                        "The Geometry: "
+                        "A Hidden Architecture of Shapes"
+                    ),
+
+                    "narration": (
+
+                        "There was another unexpected discovery.\n\n"
+
+                        "When the researchers examined how "
+                        "features were arranged in their toy "
+                        "models, they found that the directions "
+                        "were not always scattered randomly.\n\n"
+
+                        "In experiments with uniform features, "
+                        "the directions could form recognisable "
+                        "geometric structures.\n\n"
+
+                        "Some appeared as antipodal pairs: "
+                        "two feature directions pointing in "
+                        "exactly opposite directions.\n\n"
+
+                        "Other configurations involved triangles, "
+                        "pentagons and tetrahedra.\n\n"
+
+                        "The paper also discusses more complicated "
+                        "structures, including square antiprisms.\n\n"
+
+                        "Why should geometry appear in a neural "
+                        "network experiment?\n\n"
+
+                        "Because each feature is represented "
+                        "by a direction in the hidden space. "
+                        "The angles between those directions "
+                        "influence how much the features interfere "
+                        "with one another.\n\n"
+
+                        "The model is effectively balancing "
+                        "two competing pressures: represent "
+                        "useful features, while reducing the "
+                        "interference between them.\n\n"
+
+                        "The researchers found that this problem "
+                        "has a surprising relationship with "
+                        "geometric point-packing problems.\n\n"
+
+                        "But they were careful about the "
+                        "interpretation. They noted that these "
+                        "elegant geometric structures could "
+                        "be partly specific to the simplified "
+                        "toy model they studied.\n\n"
+
+                        "The real world may be much less tidy."
+
+                    ),
+
+                    "evidence": [
+                        "geometry"
+                    ]
+                },
+
+                # CHAPTER 7
+
+                {
+                    "title": (
+                        "The Aftermath: "
+                        "What This Toy Model Does—and Doesn't—Show"
+                    ),
+
+                    "narration": (
+
+                        "So what did the researchers actually "
+                        "establish?\n\n"
+
+                        "They demonstrated that small neural "
+                        "networks can represent more features "
+                        "than available dimensions under "
+                        "specific experimental conditions.\n\n"
+
+                        "They showed how sparsity can make "
+                        "this strategy useful, why interference "
+                        "appears, and how different representation "
+                        "regimes can emerge.\n\n"
+
+                        "They also uncovered unexpectedly "
+                        "structured geometry in their toy models.\n\n"
+
+                        "But we need to be careful about what "
+                        "we conclude.\n\n"
+
+                        "These experiments used small ReLU "
+                        "networks and synthetic data. They did "
+                        "not directly demonstrate the same "
+                        "mechanism inside a deployed large "
+                        "language model.\n\n"
+
+                        "The authors explicitly acknowledge "
+                        "that it is unclear how much of the "
+                        "observed behaviour generalizes to "
+                        "real neural networks.\n\n"
+
+                        "They also point out that real-world "
+                        "superposition is likely to be "
+                        "non-uniform, with features differing "
+                        "in importance, sparsity and correlation.\n\n"
+
+                        "So this paper does not solve the "
+                        "entire problem of understanding "
+                        "a neural network.\n\n"
+
+                        "What it gives us is something "
+                        "extremely valuable: a possible "
+                        "mechanism that researchers can "
+                        "investigate more deeply.\n\n"
+
+
+                        "And that leads to a much bigger "
+                        "question."
+
+                    ),
+
+                    "evidence": [
+                        "limitations"
+                    ]
+                }
+            ],
+
+            #CLIFFHANGER
+
+            "cliffhanger": (
+
+                "We have seen how a tiny neural network can "
+                "represent more features than it has dimensions.\n\n"
+
+                "But so far, everything has happened inside "
+                "a controlled toy experiment.\n\n"
+
+                "What happens when we leave this tiny laboratory "
+                "and look inside a real language model?\n\n"
+
+                "Can researchers identify the individual features "
+                "hidden inside its enormous activation spaces?\n\n"
+
+                "And if many features are packed together, "
+                "is there a way to separate them again?\n\n"
+
+                "The next investigation moves beyond toy networks "
+                "and into the search for interpretable features "
+                "inside real language models."
+            )
+        },
+
+        #SCIENCE CARD
+
+        "science_card": {
+
+            "key_takeaway": (
+                "Superposition is a way for a neural network "
+                "to represent more features than it has "
+                "dimensions. Sparsity can make this useful, "
+                "but overlapping representations introduce "
+                "interference."
+            ),
+
+            "what_it_does_not_prove": [
+
+                "That every neuron in a production language model is polysemantic.",
+
+                "That the same geometric structures occur in every neural network.",
+
+                "That the toy-model mechanism fully explains the internal representations of large language models.",
+
+                "That superposition is always beneficial or always used.",
+
+                "That researchers have completely solved the problem of interpreting neural networks."
             ]
-        }
-    }
-}
+
+        },
+
+        "navigation": {
+            "next_episode_id": None,
+            "previous_episode_id": None
+        },
+
+        "publication_status": "published"
+},
 
 SERIES = {
     "ai-that-lies": {
@@ -927,7 +1170,9 @@ SERIES = {
     },
 
     "inside-black-box": {
+
         "id": "inside-black-box",
+
         "title": "Inside the Black Box",
 
         "description": (
@@ -937,11 +1182,14 @@ SERIES = {
         ),
 
         "genre": "Scientific Thriller",
+
         "topic": "Mechanistic Interpretability",
 
         "cover": {
             "headline": "WHAT IS HAPPENING INSIDE AI?",
-            "visual": "A neural network hiding a world of representations"
+            "visual": ("A hidden neural world filled with overlapping "
+                "features and mysterious representations"
+            )
         },
 
         "episode_ids": [
